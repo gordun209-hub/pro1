@@ -18,7 +18,7 @@ const TodoForm = () => {
 
   const filter = useAppSelector(selectFilter)
   const currentTodos =
-    filter.filter === 'all' ? todos : todos.filter(todo => todo.completed)
+    filter.filter === 'all' ? todos : todos.filter(todo => todo.important)
   return (
     <div className=' container mx-auto  py-2    bg-slate-200'>
       <Formik
@@ -42,7 +42,7 @@ const TodoForm = () => {
               />
               <div>
                 <button
-                  className='mx-2 my-3'
+                  className='mx-2 my-3 hover:bg-red-600 hover:text-white'
                   type='button'
                   onClick={() =>
                     dispatch(
