@@ -16,7 +16,7 @@ const TodoForm = () => {
       sx={{
         py: 10,
         heigth: '100vh',
-        bgcolor: '#cfe8fc',
+        bgcolor: '#a50000',
         textAlign: 'center '
       }}
     >

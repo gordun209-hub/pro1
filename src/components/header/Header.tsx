@@ -1,12 +1,14 @@
-import { Box, CardContent, Container } from '@mui/material'
-import { flexbox, sizing, textAlign } from '@mui/system'
-import { FaAlignJustify } from 'react-icons/fa'
+import { Box, Container, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <Box component={'h1'} sx={{ textAlign: 'right' }}>
-      <Link to='/'>Home</Link>
+    <Box
+      sx={{ width: '100%', height: '100%', display: 'flex', color: 'yellow' }}
+    >
+      <Link to='/'>
+        <Typography>Home</Typography>
+      </Link>
     </Box>
   )
 }

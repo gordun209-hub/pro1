@@ -1,6 +1,14 @@
 import '@fontsource/roboto/700.css'
 
-import { Box, Button, Container, Input, Paper, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  Checkbox,
+  Container,
+  Input,
+  Paper,
+  Typography
+} from '@mui/material'
 import { FaTrashAlt } from 'react-icons/fa'
 
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
@@ -42,6 +50,7 @@ const TodosList = () => {
               borderRadius: 3,
               margin: '10px',
               padding: '10px',
+              wordWrap: 'break-word',
               width: '45%',
               backgroundColor: 'primary.dark',
               '&:hover': {
@@ -73,22 +82,24 @@ const TodosList = () => {
               >
                 {todo.text}
               </Typography>
-              <Input
-                name='checked'
-                type='checkbox'
-                onChange={() => dispatch(changeCompleted(todo.id))}
-              />
-
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexDirection: 'reverse'
+                }}
+              >
+                <Checkbox
+                  color='default'
+                  onChange={() => dispatch(changeCompleted(todo.id))}
+                />
+                <Typography>completed?</Typography>
+              </Box>
               <Button
                 type='button'
                 onClick={() => dispatch(changeImportance(todo.id))}
               >
-                <Typography
-                  variant='body2'
-                  sx={{ fontWeight: 'light', fontSize: '10px' }}
-                >
-                  {todo.important ? 'make not important' : 'make important'}
-                </Typography>
+                {todo.important ? 'make not important' : 'make important'}
               </Button>
             </Paper>
           </Box>
