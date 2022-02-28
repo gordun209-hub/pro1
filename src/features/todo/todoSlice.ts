@@ -50,11 +50,20 @@ export const todoSlice = createSlice({
     changeCompleted(state, action: PayloadAction<number>) {
       const todoIndex = state.findIndex(todo => todo.id === action.payload)
       state[todoIndex].completed = !state[todoIndex].completed
+    },
+    editTodo(state, action: PayloadAction<{ id: number; text: string }>) {
+      const todoIndex = state.findIndex(todo => todo.id === action.payload.id)
+      state[todoIndex].text = action.payload.text
     }
   }
 })
 
-export const { addTodo, deleteTodo, changeImportance, changeCompleted } =
-  todoSlice.actions
+export const {
+  addTodo,
+  deleteTodo,
+  changeImportance,
+  editTodo,
+  changeCompleted
+} = todoSlice.actions
 export default todoSlice
 export const selectTodos = (state: RootState) => state.todos

@@ -1,6 +1,3 @@
-import './index.css'
-import './main.css'
-
 import { StrictMode } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'

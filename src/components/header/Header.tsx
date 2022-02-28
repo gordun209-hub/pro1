@@ -1,14 +1,13 @@
+import { Box, CardContent, Container } from '@mui/material'
+import { flexbox, sizing, textAlign } from '@mui/system'
+import { FaAlignJustify } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className='flex justify-between    bg-indigo-300'>
-      <Link className='float-right hover:text-pink-900  ' to='/'>
-        <button className='hover:bg-red-600   bg-red-200 rounded-lg my-2 px-1 rad'>
-          Home
-        </button>
-      </Link>
-    </div>
+    <Box component={'h1'} sx={{ textAlign: 'right' }}>
+      <Link to='/'>Home</Link>
+    </Box>
   )
 }
 
